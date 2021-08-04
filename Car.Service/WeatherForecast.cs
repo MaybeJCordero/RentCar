@@ -1,6 +1,6 @@
 using System;
 
-namespace RentCarService
+namespace Car.Service
 {
     public class WeatherForecast
     {

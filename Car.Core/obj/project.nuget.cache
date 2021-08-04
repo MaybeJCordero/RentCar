@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "4asUD0klmFWq7S6bNYZPdw1aVhvwqy7KtJyh6v5c7JB6uW7yuiJ/Y+IewDIz4RawC2p9eRgU/oCjz2ZpQh/N4Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Jose Cordero\\Documents\\Projetcs\\RentCar\\Car.Core\\Car.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Jose Cordero\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Jose Cordero\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -198,11 +198,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jose Cordero\\Documents\\Projetcs\\RentCar\\RentCarService\\RentCarService.csproj",
-      "projectName": "RentCarService",
-      "projectPath": "C:\\Users\\Jose Cordero\\Documents\\Projetcs\\RentCar\\RentCarService\\RentCarService.csproj",
+      "projectUniqueName": "C:\\Users\\Jose Cordero\\Documents\\Projetcs\\RentCar\\Car.Service\\Car.Service.csproj",
+      "projectName": "Car.Service",
+      "projectPath": "C:\\Users\\Jose Cordero\\Documents\\Projetcs\\RentCar\\Car.Service\\Car.Service.csproj",
       "packagesPath": "C:\\Users\\Jose Cordero\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jose Cordero\\Documents\\Projetcs\\RentCar\\RentCarService\\obj\\",
+      "outputPath": "C:\\Users\\Jose Cordero\\Documents\\Projetcs\\RentCar\\Car.Service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Jose Cordero\\AppData\\Roaming\\NuGet\\NuGet.Config",
