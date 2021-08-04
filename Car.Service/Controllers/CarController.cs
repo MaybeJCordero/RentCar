@@ -68,6 +68,9 @@ namespace CarService.Controllers
                 var response = await _repository.Update(car);
                 if (response != 0)
                 {
+                    //Sending the object to the car exchange
+                    await _publishEndpoint.Publish<Car>(car);
+
                     return Ok("Updated successfully");
                 }
                 else
@@ -79,7 +82,6 @@ namespace CarService.Controllers
             {
                 return BadRequest("An error ocurred, contact IT Staff");
             }
-
         }
     }
 }

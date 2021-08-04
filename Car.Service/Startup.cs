@@ -1,3 +1,7 @@
+using CarCore.Interfaces;
+using CarInfrastructure;
+using CarInfrastructure.Repositories;
+using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,6 +36,22 @@ namespace CarService
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Car.Service", Version = "v1" });
             });
+
+            //MassTransit
+            services.AddMassTransit(config => {
+                config.UsingRabbitMq((ctx, cfg) =>
+                {
+                    cfg.Host(Configuration["Queues:RabbitMQ:DefaultHost:Host"]);
+                });
+            });
+
+            services.AddMassTransitHostedService();
+
+            //Dependecy Injections
+            services.AddTransient<ICarRepository, CarRepository>();
+
+            //Adding the Dependecy Injections for the Car Infrastructue
+            services.AddInfrastructure();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
