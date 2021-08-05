@@ -8,5 +8,6 @@ namespace ClientCore.Interfaces
     {
         Task<IEnumerable<T>> GetAll();
         Task<int> Update(T entity);
+        Task<int> Add(T entity);
     }
 }

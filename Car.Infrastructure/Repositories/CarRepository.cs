@@ -52,7 +52,7 @@ namespace CarInfrastructure.Repositories
                     return affectedRows;
                 }
             }
-            catch(Exception)
+            catch(Exception e)
             {
                 throw;
             }
@@ -61,7 +61,7 @@ namespace CarInfrastructure.Repositories
         public async Task<int> Update(Car entity)
         {
             var sql = "UPDATE Cars SET Description = @Description, Brand = @Brand, Model = @Model, " +
-                "Rent = @Rent, ClientID = @ClientID, ClientName = ClientName" +
+                "Rent = @Rent, ClientID = @ClientID, ClientName = @ClientName " +
                 "WHERE ID = @ID;";
 
             try

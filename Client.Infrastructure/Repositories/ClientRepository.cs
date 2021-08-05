@@ -33,7 +33,7 @@ namespace ClientInterfaces.Repositories
                     return affectedRows;
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 throw;
             }
@@ -60,7 +60,7 @@ namespace ClientInterfaces.Repositories
 
         public async Task<int> Update(Client entity)
         {
-            var sql = "UPDATE Clients SET Name = @Name, IdentificationCard = @IdentificationCard" +
+            var sql = "UPDATE Clients SET Name = @Name, IdentificationCard = @IdentificationCard " +
                       "WHERE ID = @ID;";
 
             try

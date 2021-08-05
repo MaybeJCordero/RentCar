@@ -1,3 +1,10 @@
+using CarCore.Interfaces;
+using CarInfrastructure.Repositories;
+using ClientCore.Interfaces;
+using ClientInfrastructure;
+using ClientInterfaces.Repositories;
+using ClientService.Queues;
+using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -12,7 +19,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Client.Service
+namespace ClientService
 {
     public class Startup
     {
@@ -32,6 +39,29 @@ namespace Client.Service
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Client.Service", Version = "v1" });
             });
+
+            //MassTransit
+            services.AddMassTransit(config => {
+                config.AddConsumer<CarConsumer>();
+
+                config.UsingRabbitMq((ctx, cfg) =>
+                {
+                    cfg.Host(Configuration["Queues:RabbitMQ:DefaultHost:Host"]);
+
+                    cfg.ReceiveEndpoint(Configuration["Queues:RabbitMQ:DefaultHost:CarQueue"], c => {
+                        c.ConfigureConsumer<CarConsumer>(ctx);
+                    });
+                });
+            });
+
+            services.AddMassTransitHostedService();
+
+            //Dependecy Injections
+            services.AddTransient<IClientRepository, ClientRepository>();
+            services.AddTransient<ICarRepository, CarRepository>();
+
+            //Adding the Dependecy Injections for the Rent Infrastructue
+            services.AddInfrastructure();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
