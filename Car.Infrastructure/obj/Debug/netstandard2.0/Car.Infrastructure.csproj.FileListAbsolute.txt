@@ -1,0 +1,12 @@
+C:\Users\Jose Cordero\Documents\Projetcs\RentCar\Car.Infrastructure\bin\Debug\netstandard2.0\Car.Infrastructure.deps.json
+C:\Users\Jose Cordero\Documents\Projetcs\RentCar\Car.Infrastructure\bin\Debug\netstandard2.0\Car.Infrastructure.dll
+C:\Users\Jose Cordero\Documents\Projetcs\RentCar\Car.Infrastructure\bin\Debug\netstandard2.0\Car.Infrastructure.pdb
+C:\Users\Jose Cordero\Documents\Projetcs\RentCar\Car.Infrastructure\bin\Debug\netstandard2.0\Car.Core.dll
+C:\Users\Jose Cordero\Documents\Projetcs\RentCar\Car.Infrastructure\bin\Debug\netstandard2.0\Car.Core.pdb
+C:\Users\Jose Cordero\Documents\Projetcs\RentCar\Car.Infrastructure\obj\Debug\netstandard2.0\Car.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Jose Cordero\Documents\Projetcs\RentCar\Car.Infrastructure\obj\Debug\netstandard2.0\Car.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Jose Cordero\Documents\Projetcs\RentCar\Car.Infrastructure\obj\Debug\netstandard2.0\Car.Infrastructure.AssemblyInfo.cs
+C:\Users\Jose Cordero\Documents\Projetcs\RentCar\Car.Infrastructure\obj\Debug\netstandard2.0\Car.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Jose Cordero\Documents\Projetcs\RentCar\Car.Infrastructure\obj\Debug\netstandard2.0\Car.Infrastructure.csproj.CopyComplete
+C:\Users\Jose Cordero\Documents\Projetcs\RentCar\Car.Infrastructure\obj\Debug\netstandard2.0\Car.Infrastructure.dll
+C:\Users\Jose Cordero\Documents\Projetcs\RentCar\Car.Infrastructure\obj\Debug\netstandard2.0\Car.Infrastructure.pdb
