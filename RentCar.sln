@@ -9,11 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Car.Core", "Car.Core\Car.Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Car.Infrastructure", "Car.Infrastructure\Car.Infrastructure.csproj", "{B0D6771A-75FC-479D-AD4B-C33102B6811E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.Service", "Client.Service\Client.Service.csproj", "{8E49E457-26A4-402A-90B4-F485886FA55E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client.Service", "Client.Service\Client.Service.csproj", "{8E49E457-26A4-402A-90B4-F485886FA55E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.Core", "Client.Core\Client.Core.csproj", "{93F16474-D313-42B1-B3E8-F4BF7A2DE197}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client.Core", "Client.Core\Client.Core.csproj", "{93F16474-D313-42B1-B3E8-F4BF7A2DE197}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.Infrastructure", "Client.Infrastructure\Client.Infrastructure.csproj", "{7881A6D6-0B44-43A9-8A2D-F26DEF185B0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client.Infrastructure", "Client.Infrastructure\Client.Infrastructure.csproj", "{7881A6D6-0B44-43A9-8A2D-F26DEF185B0A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

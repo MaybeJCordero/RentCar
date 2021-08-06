@@ -6,7 +6,7 @@ namespace CarCore.Entities
 {
     public class Car
     {
-        public int ID { get; set; }
+        public Guid ID { get; set; }
         public string Description { get; set; }
         public string Brand { get; set; }
         public string Model { get; set; }

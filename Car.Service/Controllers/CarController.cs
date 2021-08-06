@@ -68,7 +68,7 @@ namespace CarService.Controllers
                 var response = await _repository.Update(car);
                 if (response != 0)
                 {
-                    //Sending the object to the car exchange
+                    //Sending the object to the State Machine
                     await _publishEndpoint.Publish<Car>(car);
 
                     return Ok("Updated successfully");

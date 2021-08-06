@@ -1,7 +1,6 @@
 C:\Users\Jose Cordero\Documents\Projetcs\RentCar\Car.Core\bin\Debug\netstandard2.0\Car.Core.deps.json
 C:\Users\Jose Cordero\Documents\Projetcs\RentCar\Car.Core\bin\Debug\netstandard2.0\Car.Core.dll
 C:\Users\Jose Cordero\Documents\Projetcs\RentCar\Car.Core\bin\Debug\netstandard2.0\Car.Core.pdb
-C:\Users\Jose Cordero\Documents\Projetcs\RentCar\Car.Core\obj\Debug\netstandard2.0\Car.Core.csproj.AssemblyReference.cache
 C:\Users\Jose Cordero\Documents\Projetcs\RentCar\Car.Core\obj\Debug\netstandard2.0\Car.Core.AssemblyInfoInputs.cache
 C:\Users\Jose Cordero\Documents\Projetcs\RentCar\Car.Core\obj\Debug\netstandard2.0\Car.Core.AssemblyInfo.cs
 C:\Users\Jose Cordero\Documents\Projetcs\RentCar\Car.Core\obj\Debug\netstandard2.0\Car.Core.csproj.CoreCompileInputs.cache

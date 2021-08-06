@@ -21,7 +21,7 @@ namespace ClientInterfaces.Repositories
 
         public async Task<int> Add(Client entity)
         {
-            var sql = "INSERT INTO Clients (Name, IdentificationCard) " +
+            var sql = "INSERT INTO Clients (c, IdentificationCard) " +
                 "Values (@Name, @IdentificationCard);";
 
             try
@@ -33,7 +33,7 @@ namespace ClientInterfaces.Repositories
                     return affectedRows;
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 throw;
             }
@@ -69,6 +69,25 @@ namespace ClientInterfaces.Repositories
                 {
                     connection.Open();
                     var affectedRows = await connection.ExecuteAsync(sql, entity);
+                    return affectedRows;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<int> UpdateByCar(int clientID, string clientName)
+        {
+            var sql = $"UPDATE Clients SET Name = '{clientName}' WHERE ID = {clientID};";
+
+            try
+            {
+                using (var connection = new SqlConnection(_configuration.GetConnectionString("ClientConnection")))
+                {
+                    connection.Open();
+                    var affectedRows = await connection.ExecuteAsync(sql);
                     return affectedRows;
                 }
             }

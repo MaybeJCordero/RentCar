@@ -40,8 +40,8 @@ namespace CarInfrastructure.Repositories
 
         public async Task<int> Add(Car entity)
         {
-            var sql = "INSERT INTO Cars (Description, Brand, Model, Rent, ClientID, ClientName) " +
-                "Values (@Description, @Brand, @Model, @Rent, @ClientID, @ClientName);";
+            var sql = "INSERT INTO Cars (ID, Description, Brand, Model, Rent, ClientID, ClientName) " +
+                "Values (@ID, @Description, @Brand, @Model, @Rent, @ClientID, @ClientName);";
 
             try
             {
@@ -52,7 +52,7 @@ namespace CarInfrastructure.Repositories
                     return affectedRows;
                 }
             }
-            catch(Exception e)
+            catch(Exception)
             {
                 throw;
             }
@@ -70,6 +70,25 @@ namespace CarInfrastructure.Repositories
                 {
                     connection.Open();
                     var affectedRows = await connection.ExecuteAsync(sql, entity);
+                    return affectedRows;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<int> UpdateByClient(int clientID, string clientName)
+        {
+            var sql = $"UPDATE Cars SET ClientName = '{clientName}' WHERE ClientID = {clientID};";
+
+            try
+            {
+                using (var connection = new SqlConnection(_configuration.GetConnectionString("CarConnection")))
+                {
+                    connection.Open();
+                    var affectedRows = await connection.ExecuteAsync(sql);
                     return affectedRows;
                 }
             }

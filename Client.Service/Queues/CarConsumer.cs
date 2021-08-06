@@ -1,5 +1,6 @@
 ﻿using CarCore.Entities;
 using CarCore.Interfaces;
+using ClientCore.Interfaces;
 using MassTransit;
 using System;
 using System.Collections.Generic;
@@ -10,16 +11,16 @@ namespace ClientService.Queues
 {
     public class CarConsumer : IConsumer<Car>
     {
-        private readonly ICarRepository _carRepository;
+        private readonly IClientRepository _repository;
 
-        public CarConsumer(ICarRepository carRepository)
+        public CarConsumer(IClientRepository repository)
         {
-            _carRepository = carRepository;
+            _repository = repository;
         }
 
         public async Task Consume(ConsumeContext<Car> context)
         {
-            //Update cliets's name
+            await _repository.UpdateByCar(context.Message.ClientID, context.Message.ClientName);
         }
     }
 }

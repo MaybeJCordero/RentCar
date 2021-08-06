@@ -1,20 +1,16 @@
 using CarCore.Interfaces;
 using CarInfrastructure;
 using CarInfrastructure.Repositories;
+using CarService.Queues;
+using ClientCore.Interfaces;
+using ClientInterfaces.Repositories;
 using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CarService
 {
@@ -39,15 +35,22 @@ namespace CarService
 
             //MassTransit
             services.AddMassTransit(config => {
+                config.AddConsumer<ClientConsumer>();
                 config.UsingRabbitMq((ctx, cfg) =>
                 {
                     cfg.Host(Configuration["Queues:RabbitMQ:DefaultHost:Host"]);
+
+                    cfg.ReceiveEndpoint(Configuration["Queues:RabbitMQ:DefaultHost:ClientQueue"], c => {
+                        c.ConfigureConsumer<ClientConsumer>(ctx);
+                    });
                 });
+
             });
 
             services.AddMassTransitHostedService();
 
             //Dependecy Injections
+            services.AddTransient<IClientRepository, ClientRepository>();
             services.AddTransient<ICarRepository, CarRepository>();
 
             //Adding the Dependecy Injections for the Car Infrastructue

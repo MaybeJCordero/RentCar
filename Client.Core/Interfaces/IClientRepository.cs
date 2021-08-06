@@ -7,5 +7,6 @@ namespace ClientCore.Interfaces
 {
     public interface IClientRepository : IGenericRepository<Client>
     {
+        Task<int> UpdateByCar(int clientID, string clientName);
     }
 }

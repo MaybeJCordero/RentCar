@@ -67,7 +67,7 @@ namespace ClientService.Controllers
                 if (response != 0)
                 {
                     //Sending the object to the client exchange
-                    //await _publishEndpoint.Publish<Client>(client);
+                    await _publishEndpoint.Publish<Client>(client);
 
                     return Ok("Updated successfully");
                 }
@@ -76,7 +76,7 @@ namespace ClientService.Controllers
                     return BadRequest("An error ocurred, contact IT Staff");
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 return BadRequest("An error ocurred, contact IT Staff");
             }
